@@ -15,13 +15,14 @@
 class CSprite2D
 {
 private:
-	D3DXMATRIX		m_Mat;
+	D3DXMATRIX		m_Mat;				//	変換行列
+	D3DXMATRIX		m_MatTotal;			//	積算行列
 
-	D3DXVECTOR3		m_angle;
-	D3DXVECTOR3		m_trans;
+	D3DXVECTOR3		m_angle;			//	回転角度
+	D3DXVECTOR3		m_trans;			//	移動量
 
-
-	bool			m_isActive;
+	LPDIRECT3DTEXTURE9* m_tex;			//	テクスチャ
+	bool			m_isActive;			//	
 
 public:
 	CSprite2D(LPCWSTR filename);
