@@ -10,8 +10,9 @@
 //-----------------------------------------------------------------------------
 #include "CSprite2D.h"
 
-CSprite2D::CSprite2D()
+CSprite2D::CSprite2D(LPCWSTR filename)
 {
+
 }
 
 CSprite2D::~CSprite2D()
