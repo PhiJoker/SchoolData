@@ -24,6 +24,7 @@
 typedef struct tagVERTEX2D
 {
 	float x, y, z;
+	float rhw;
 	float u, v;
 }VERTEX2D;
 
@@ -65,7 +66,7 @@ private:
 	D3DXVECTOR3			m_position;		//	中心座標
 	D3DXVECTOR3			m_scale;		//	スケール量
 
-	LPDIRECT3DTEXTURE9*	m_tex;			//	テクスチャ
+	LPDIRECT3DTEXTURE9*	m_pTex;			//	テクスチャ
 	
 	//	フレームアニメーション
 	AnimationClip*		m_frameList;

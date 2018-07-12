@@ -38,7 +38,8 @@ void MakeWorldMatrix(D3DXMATRIX& mat, D3DXMATRIX& mattotal, const D3DXVECTOR3& t
 	D3DXMatrixTranslation(&mattrans, trans.x, trans.y, trans.z);
 
 	mat = matscale*matx*maty*matz*mattrans;
-	mat = mattotal*mat;
+	//mat = mattotal*mat;
+	mattotal = mat*mattotal;
 }
 
 
