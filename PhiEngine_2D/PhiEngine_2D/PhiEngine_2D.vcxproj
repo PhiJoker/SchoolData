@@ -153,7 +153,7 @@
     <ClCompile Include="game.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="MathUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDirectxGraphics.h" />
@@ -161,7 +161,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="GameUtil.h" />
     <ClInclude Include="input.h" />
-    <ClInclude Include="polygon.h" />
+    <ClInclude Include="MathUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
