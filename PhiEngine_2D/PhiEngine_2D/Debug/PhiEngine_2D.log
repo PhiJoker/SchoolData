@@ -1,0 +1,4 @@
+﻿  game.cpp
+c:\phiproject\program\github\schooldata\phiengine_2d\phiengine_2d\game.cpp(142): warning C4244: '=': 'double' から 'LONG' への変換です。データが失われる可能性があります。
+  PhiEngine_2D.vcxproj -> C:\PhiProject\Program\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.exe
+  PhiEngine_2D.vcxproj -> C:\PhiProject\Program\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.pdb (Full PDB)

@@ -1,0 +1,18 @@
+﻿  main.cpp
+c:\users\fatez\desktop\k05\k05\main.cpp(221): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(222): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(230): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(232): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(236): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(229): warning C4101: 'fRand_r': ローカル変数は 1 度も使われていません。
+c:\users\fatez\desktop\k05\k05\main.cpp(229): warning C4101: 'fRand_t': ローカル変数は 1 度も使われていません。
+c:\users\fatez\desktop\k05\k05\main.cpp(251): warning C4101: 'oPosX': ローカル変数は 1 度も使われていません。
+c:\users\fatez\desktop\k05\k05\main.cpp(251): warning C4101: 'oPosY': ローカル変数は 1 度も使われていません。
+c:\users\fatez\desktop\k05\k05\main.cpp(340): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\fatez\desktop\k05\k05\main.cpp(353): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(376): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(377): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\fatez\desktop\k05\k05\main.cpp(404): warning C4305: '+=': 'double' から 'float' へ切り詰めます。
+c:\users\fatez\desktop\k05\k05\main.cpp(421): warning C4554: '<<': 演算子の優先順位に問題があります。かっこを使用して優先順位を明確にしてください
+  k05.vcxproj -> C:\Users\fatez\Desktop\k05\Debug\k05.exe
+  k05.vcxproj -> C:\Users\fatez\Desktop\k05\Debug\k05.pdb (Full PDB)
