@@ -14,6 +14,8 @@
 #include	"GameUtil.h"
 #include	"MathUtil.h"
 
+#define		RIGHT		0;
+#define		LEFT		1;
 //-----------------------------------------------------------------------------
 //	構造体定義
 //-----------------------------------------------------------------------------
@@ -25,12 +27,34 @@ typedef struct tagVERTEX2D
 	float u, v;
 }VERTEX2D;
 
+//	アニメーションクリップ
+typedef struct tagAnimationClip
+{
+	//	UV原点
+	float originU;
+	float originV;
+
+	//	分割サイズ
+	float divU;
+	float divV;
+
+	//	フレーム数量
+	unsigned int frameNum;
+	//	時間(フレーム)
+	unsigned int frameTime;
+}AnimationClip;
+
 //=============================================================================
 //!	@class	CSprite2D
 //!	@brief	CSprite2Dクラス
 //=============================================================================
 class CSprite2D
 {
+
+public:
+	bool				m_isActive;		//	
+	int					m_actionID;
+
 private:
 	VERTEX2D			m_v[4];			//	
 
@@ -38,17 +62,34 @@ private:
 	D3DXMATRIX			m_MatTotal;		//	積算行列
 
 	D3DXVECTOR3			m_rotation;		//	回転角度
-	D3DXVECTOR3			m_position;		//	移動量
+	D3DXVECTOR3			m_position;		//	中心座標
 	D3DXVECTOR3			m_scale;		//	スケール量
 
 	LPDIRECT3DTEXTURE9*	m_tex;			//	テクスチャ
-	bool				m_isActive;		//	
+	
+	//	フレームアニメーション
+	AnimationClip*		m_frameList;
+	int					m_direction;
+	int					m_frameCnt;
+
+	bool				m_isTurn;
+	bool				m_isAnimation;
 
 public:
-	CSprite2D(){}						//	コンストラクタ
-	~CSprite2D(){}						//	デストラクタ
 
-	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale);
+	//	コンストラクタ
+	CSprite2D() {
+		m_direction = RIGHT;
+		m_actionID = 0; 
+		m_frameCnt = 0;
+	}		
+
+	//	デストラクタ
+	~CSprite2D(){}						
+
+	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale, bool isTurn);
+
+	void SetAnimation(AnimationClip clip[], int actionNum);
 
 	void Update(LPDIRECT3DDEVICE9 lpdev);
 
@@ -56,6 +97,13 @@ public:
 	
 	void Exit();
 
+	void Translation(D3DXVECTOR3& position) { m_position = position; }
+	void Rotate(D3DXVECTOR3& angle) { m_rotation = angle; }
+	void Scaling(D3DXVECTOR3& scale) { m_scale = scale; }
+
+	D3DXVECTOR3 GetPosition() { return m_position; }
+	D3DXVECTOR3 GetRotation() { return m_rotation; }
+	D3DXVECTOR3 GetScale() { return m_scale; }
 };
 
 
