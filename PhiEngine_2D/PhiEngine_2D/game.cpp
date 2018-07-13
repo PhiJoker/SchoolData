@@ -102,9 +102,14 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 
 
 
-	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(2, 2, 2));
-	g_player2.Init(g_DXGrobj->GetDXDevice(), L"test.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(3, 3, 3));
+	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(2, 2, 2), true);
 
+	g_player2.Init(g_DXGrobj->GetDXDevice(), L"DX.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(3, 3, 3), false);
+	AnimationClip tmpc[2] = {
+		{0,0,0.2f,0.5f,4,50},
+		{ 0,0.5f,0.2f,0.5f,5 ,10}
+	};
+	g_player2.SetAnimation(tmpc, 2);
 	return	true;
 }
 
