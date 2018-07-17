@@ -28,7 +28,13 @@ typedef struct tagVERTEX2D
 {
 	float x, y, z;
 <<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 	float rhw;
+=======
+>>>>>>> parent of a2402fe... PhiEngine
 	float u, v;
 }VERTEX2D;
 
@@ -75,7 +81,7 @@ private:
 	D3DXVECTOR3			m_position;		//	中心座標
 	D3DXVECTOR3			m_scale;		//	スケール量
 
-	LPDIRECT3DTEXTURE9*	m_pTex;			//	テクスチャ
+	LPDIRECT3DTEXTURE9*	m_tex;			//	テクスチャ
 	
 	//	フレームアニメーション
 	AnimationClip*		m_frameList;

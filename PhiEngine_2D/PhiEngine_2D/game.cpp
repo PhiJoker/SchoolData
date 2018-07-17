@@ -52,25 +52,21 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 		return false;
 	}
 
-	//// カメラ変換行列作成
+	// カメラ変換行列作成
 	D3DXMatrixLookAtLH(&g_MatView,
 		&D3DXVECTOR3(0.0f, 0.0f, -10.0f),		// 視点
-		&D3DXVECTOR3(0.0f, 0.0f, 0.0f),			// 注視点
+		&D3DXVECTOR3(0.0f, 0.0f, 0.0f),		// 注視点
 		&D3DXVECTOR3(0.0f, 1.0f, 0.0f));		// 上向き
 
 												// カメラ行列を固定パイプラインへセット
 	g_DXGrobj->GetDXDevice()->SetTransform(D3DTS_VIEW, &g_MatView);
 
-	
-
-
 	// プロジェクション変換行列作成
-	//D3DXMatrixPerspectiveFovLH(&g_MatProjection,
-	//	D3DX_PI / 2,					// 視野角
-	//	(float)width / (float)height,	// アスペクト比
-	//	1.0f,						// ニアプレーン
-	//	1000.0f);					// ファープレーン
-	D3DXMatrixOrthoLH(&g_MatProjection, width, height, 0.1f, 1000.0f);
+	D3DXMatrixPerspectiveFovLH(&g_MatProjection,
+		D3DX_PI / 2,					// 視野角
+		(float)width / (float)height,	// アスペクト比
+		1.0f,						// ニアプレーン
+		1000.0f);					// ファープレーン
 
 	// 射影変換行列を固定パイプラインへセット
 	g_DXGrobj->GetDXDevice()->SetTransform(D3DTS_PROJECTION, &g_MatProjection);
@@ -110,9 +106,16 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 
 
 <<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1), true);
+=======
+	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(2, 2, 2), true);
+>>>>>>> parent of a2402fe... PhiEngine
 
-	g_player2.Init(g_DXGrobj->GetDXDevice(), L"DX.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1), false);
+	g_player2.Init(g_DXGrobj->GetDXDevice(), L"DX.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(3, 3, 3), false);
 	AnimationClip tmpc[2] = {
 		{0,0,0.2f,0.5f,4,50},
 		{ 0,0.5f,0.2f,0.5f,5 ,10}
@@ -133,10 +136,20 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 void GameInput() {
 	UpdateInput();				// 入力を検知する
 <<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 	
 =======
 
 >>>>>>> dev
+<<<<<<< Updated upstream
+=======
+=======
+
+>>>>>>> parent of a2402fe... PhiEngine
+>>>>>>> Stashed changes
 }
 
 //=============================================================================
@@ -147,6 +160,10 @@ void GameInput() {
 //=============================================================================
 void GameUpdate() {
 <<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 	if (Collision2D(g_player, g_player2))
 	{
 		g_player2.m_actionID = 1;
@@ -155,6 +172,8 @@ void GameUpdate() {
 	{
 		g_player2.m_actionID = 0;
 	}
+=======
+>>>>>>> parent of a2402fe... PhiEngine
 	g_player.Update(g_DXGrobj->GetDXDevice());
 	g_player2.Update(g_DXGrobj->GetDXDevice());
 =======
