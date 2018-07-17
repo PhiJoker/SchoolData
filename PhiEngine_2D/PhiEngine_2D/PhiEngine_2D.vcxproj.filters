@@ -31,9 +31,12 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="MathUtil.cpp">
+<<<<<<< HEAD
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="obb.cpp">
+=======
+>>>>>>> dev
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,8 +59,11 @@
     <ClInclude Include="MathUtil.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="obb.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+=======
+>>>>>>> dev
   </ItemGroup>
 </Project>

@@ -26,7 +26,10 @@ std::thread			g_gamemainthread;	// ゲームメインスレッド
 SceneType			g_SceneStage;
 
 CSprite2D			g_player;
+<<<<<<< HEAD
 CSprite2D			g_player2;
+=======
+>>>>>>> dev
 
 //=============================================================================
 //!	@fn		GameInit
@@ -106,6 +109,7 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 
 
 
+<<<<<<< HEAD
 	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1), true);
 
 	g_player2.Init(g_DXGrobj->GetDXDevice(), L"DX.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1), false);
@@ -114,6 +118,9 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 		{ 0,0.5f,0.2f,0.5f,5 ,10}
 	};
 	g_player2.SetAnimation(tmpc, 2);
+=======
+	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1));
+>>>>>>> dev
 	return	true;
 }
 
@@ -125,7 +132,11 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 //=============================================================================
 void GameInput() {
 	UpdateInput();				// 入力を検知する
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> dev
 }
 
 //=============================================================================
@@ -135,6 +146,7 @@ void GameInput() {
 //!	@retval	なし
 //=============================================================================
 void GameUpdate() {
+<<<<<<< HEAD
 	if (Collision2D(g_player, g_player2))
 	{
 		g_player2.m_actionID = 1;
@@ -145,6 +157,9 @@ void GameUpdate() {
 	}
 	g_player.Update(g_DXGrobj->GetDXDevice());
 	g_player2.Update(g_DXGrobj->GetDXDevice());
+=======
+	g_player.Update(g_DXGrobj->GetDXDevice());
+>>>>>>> dev
 }
 
 //=============================================================================
@@ -183,7 +198,10 @@ void GameRender() {
 		break;
 	}
 	g_player.Draw(g_DXGrobj->GetDXDevice());
+<<<<<<< HEAD
 	g_player2.Draw(g_DXGrobj->GetDXDevice());
+=======
+>>>>>>> dev
 	//DrawTriangle(g_DXGrobj->GetDXDevice(), g_pTex1);
 	g_DXGrobj->GetDXDevice()->EndScene();	// 描画の終了を待つ
 
@@ -229,7 +247,10 @@ void GameMain()
 void GameExit()
 {
 	g_player.Exit();
+<<<<<<< HEAD
 	g_player2.Exit();
+=======
+>>>>>>> dev
 	g_gamemainthread.join();					// ゲームメインスレッドの終了を待つ
 
 	CloseHandle(g_hEventHandle);				// イベントハンドルクローズ

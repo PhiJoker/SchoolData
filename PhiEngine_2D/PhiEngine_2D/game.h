@@ -15,7 +15,10 @@
 #include "input.h"
 #include "GameUtil.h"
 #include "CSprite2D.h"
+<<<<<<< HEAD
 #include "obb.h"
+=======
+>>>>>>> dev
 
 //-----------------------------------------------------------------------------
 //	プロトタイプ宣言
