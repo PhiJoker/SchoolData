@@ -1,8 +1,28 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 ﻿  CSprite2D.cpp
 e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\csprite2d.cpp(74): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
 e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\csprite2d.cpp(96): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\csprite2d.cpp(97): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\csprite2d.cpp(98): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
 e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\csprite2d.cpp(99): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+=======
+﻿  main.cpp
+  game.cpp
+e:\pht_programming\github\schooldata\phiengine_2d\phiengine_2d\game.cpp(138): warning C4244: '=': 'double' から 'LONG' への変換です。データが失われる可能性があります。
+  CSprite2D.cpp
+  コードを生成中...
+  スキップ中... (関連する変更は検出されませんでした)
+  MathUtil.cpp
+>>>>>>> dev
   PhiEngine_2D.vcxproj -> E:\pht_programming\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.exe
   PhiEngine_2D.vcxproj -> E:\pht_programming\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.pdb (Full PDB)
+=======
+﻿  game.cpp
+c:\phiproject\program\github\schooldata\phiengine_2d\phiengine_2d\game.cpp(147): warning C4244: '=': 'double' から 'LONG' への変換です。データが失われる可能性があります。
+  PhiEngine_2D.vcxproj -> C:\PhiProject\Program\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.exe
+  PhiEngine_2D.vcxproj -> C:\PhiProject\Program\GitHub\SchoolData\PhiEngine_2D\Debug\PhiEngine_2D.pdb (Full PDB)
+>>>>>>> parent of a2402fe... PhiEngine

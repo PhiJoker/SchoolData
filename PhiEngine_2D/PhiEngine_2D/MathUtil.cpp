@@ -38,8 +38,18 @@ void MakeWorldMatrix(D3DXMATRIX& mat, D3DXMATRIX& mattotal, const D3DXVECTOR3& t
 	D3DXMatrixTranslation(&mattrans, trans.x, trans.y, trans.z);
 
 	mat = matscale*matx*maty*matz*mattrans;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
 	//mat = mattotal*mat;
+=======
+>>>>>>> dev
 	mattotal = mat*mattotal;
+=======
+	mat = mattotal*mat;
+>>>>>>> parent of a2402fe... PhiEngine
 }
 
 
