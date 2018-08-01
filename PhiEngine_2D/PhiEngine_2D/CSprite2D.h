@@ -14,8 +14,11 @@
 #include	"GameUtil.h"
 #include	"MathUtil.h"
 
+<<<<<<< HEAD
 #define		RIGHT		0;
 #define		LEFT		1;
+=======
+>>>>>>> dev
 //-----------------------------------------------------------------------------
 //	構造体定義
 //-----------------------------------------------------------------------------
@@ -24,6 +27,14 @@
 typedef struct tagVERTEX2D
 {
 	float x, y, z;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+	float rhw;
+=======
+>>>>>>> parent of a2402fe... PhiEngine
 	float u, v;
 }VERTEX2D;
 
@@ -43,6 +54,10 @@ typedef struct tagAnimationClip
 	//	時間(フレーム)
 	unsigned int frameTime;
 }AnimationClip;
+=======
+	float u, v;
+}VERTEX2D;
+>>>>>>> dev
 
 //=============================================================================
 //!	@class	CSprite2D
@@ -61,6 +76,7 @@ private:
 	D3DXMATRIX			m_Mat;			//	変換行列
 	D3DXMATRIX			m_MatTotal;		//	積算行列
 
+<<<<<<< HEAD
 	D3DXVECTOR3			m_rotation;		//	回転角度
 	D3DXVECTOR3			m_position;		//	中心座標
 	D3DXVECTOR3			m_scale;		//	スケール量
@@ -90,6 +106,20 @@ public:
 	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale, bool isTurn);
 
 	void SetAnimation(AnimationClip clip[], int actionNum);
+=======
+	D3DXVECTOR3			m_angle;		//	回転角度
+	D3DXVECTOR3			m_trans;		//	移動量
+	D3DXVECTOR3			m_scale;		//	スケール量
+
+	LPDIRECT3DTEXTURE9* m_tex;			//	テクスチャ
+	bool				m_isActive;		//	
+
+public:
+	CSprite2D(){}						//	コンストラクタ
+	~CSprite2D(){}						//	デストラクタ
+
+	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale);
+>>>>>>> dev
 
 	void Update(LPDIRECT3DDEVICE9 lpdev);
 
@@ -106,7 +136,10 @@ public:
 	D3DXVECTOR3 GetScale() { return m_scale; }
 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
 //*****************************************************************************
 //	End of file.
 //*****************************************************************************

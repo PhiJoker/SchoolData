@@ -154,7 +154,10 @@
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MathUtil.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="obb.cpp" />
+=======
+>>>>>>> dev
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDirectxGraphics.h" />
@@ -163,7 +166,10 @@
     <ClInclude Include="GameUtil.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="MathUtil.h" />
+<<<<<<< HEAD
     <ClInclude Include="obb.h" />
+=======
+>>>>>>> dev
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
