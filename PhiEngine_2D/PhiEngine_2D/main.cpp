@@ -93,8 +93,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 											// ウインドウサイズを再計算（Metricsだけでは、フレームデザインでクライアント領域サイズが変わってしまうので）
 	GetWindowRect(hWnd, &rWindow);
 	GetClientRect(hWnd, &rClient);
-	width = (rWindow.right - rWindow.left) - (rClient.right - rClient.left) + SCREEN_WIDTH;
-	height = (rWindow.bottom - rWindow.top) - (rClient.bottom - rClient.top) + SCREEN_HEIGHT;
+	//width = (rWindow.right - rWindow.left) - (rClient.right - rClient.left) + SCREEN_WIDTH;
+	//height = (rWindow.bottom - rWindow.top) - (rClient.bottom - rClient.top) + SCREEN_HEIGHT;
 	SetWindowPos(
 		hWnd,
 		NULL,

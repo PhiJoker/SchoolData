@@ -148,28 +148,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionPlayer.cpp" />
     <ClCompile Include="CDirectXGraphics.cpp" />
     <ClCompile Include="CSprite2D.cpp" />
+    <ClCompile Include="FloorSprite.cpp" />
     <ClCompile Include="game.cpp" />
+    <ClCompile Include="Stage0Scene.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MathUtil.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="obb.cpp" />
-=======
->>>>>>> dev
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionPlayer.h" />
     <ClInclude Include="CDirectxGraphics.h" />
     <ClInclude Include="CSprite2D.h" />
+    <ClInclude Include="FloorSprite.h" />
     <ClInclude Include="game.h" />
+    <ClInclude Include="Stage0Scene.h" />
     <ClInclude Include="GameUtil.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="input.h" />
-    <ClInclude Include="MathUtil.h" />
-<<<<<<< HEAD
     <ClInclude Include="obb.h" />
-=======
->>>>>>> dev
+    <ClInclude Include="SceneBase.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,13 +12,10 @@
 //	Include header files.
 //-----------------------------------------------------------------------------
 #include	"GameUtil.h"
-#include	"MathUtil.h"
+//#include	"MathUtil.h"
 
-<<<<<<< HEAD
 #define		RIGHT		0;
 #define		LEFT		1;
-=======
->>>>>>> dev
 //-----------------------------------------------------------------------------
 //	構造体定義
 //-----------------------------------------------------------------------------
@@ -27,14 +24,8 @@
 typedef struct tagVERTEX2D
 {
 	float x, y, z;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
 	float rhw;
-=======
->>>>>>> parent of a2402fe... PhiEngine
+	D3DCOLOR c;
 	float u, v;
 }VERTEX2D;
 
@@ -54,10 +45,6 @@ typedef struct tagAnimationClip
 	//	時間(フレーム)
 	unsigned int frameTime;
 }AnimationClip;
-=======
-	float u, v;
-}VERTEX2D;
->>>>>>> dev
 
 //=============================================================================
 //!	@class	CSprite2D
@@ -65,28 +52,31 @@ typedef struct tagAnimationClip
 //=============================================================================
 class CSprite2D
 {
-
 public:
-	bool				m_isActive;		//	
-	int					m_actionID;
-
+	int					m_direction;
 private:
+	bool				m_isActive;		//	
+
 	VERTEX2D			m_v[4];			//	
 
-	D3DXMATRIX			m_Mat;			//	変換行列
-	D3DXMATRIX			m_MatTotal;		//	積算行列
+	D3DCOLOR			m_color;
+	int					m_width;		//	幅
+	int					m_height;		//	高さ
 
-<<<<<<< HEAD
-	D3DXVECTOR3			m_rotation;		//	回転角度
-	D3DXVECTOR3			m_position;		//	中心座標
-	D3DXVECTOR3			m_scale;		//	スケール量
+	float				m_angle;		//	回転角度
+	D3DXVECTOR3			m_position;		//	中心座標(画面上)
+	D3DXVECTOR3			m_location;		//	中心座標(フィールド)
 
-	LPDIRECT3DTEXTURE9*	m_tex;			//	テクスチャ
+	int					m_boxWidth;		//	当たり判定の幅
+	int					m_boxHeight;	//	当たり判定の高さ
+	D3DXVECTOR3			m_boxPosition;	//	当たり判定の中心座標
+
+	LPDIRECT3DTEXTURE9*	m_pTex;			//	テクスチャ
 	
 	//	フレームアニメーション
 	AnimationClip*		m_frameList;
-	int					m_direction;
 	int					m_frameCnt;
+	int					m_actionID;
 
 	bool				m_isTurn;
 	bool				m_isAnimation;
@@ -95,31 +85,18 @@ public:
 
 	//	コンストラクタ
 	CSprite2D() {
-		m_direction = RIGHT;
-		m_actionID = 0; 
-		m_frameCnt = 0;
 	}		
 
 	//	デストラクタ
 	~CSprite2D(){}						
 
-	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale, bool isTurn);
+	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3 position, int width, int height, bool isTurn);
 
-	void SetAnimation(AnimationClip clip[], int actionNum);
-=======
-	D3DXVECTOR3			m_angle;		//	回転角度
-	D3DXVECTOR3			m_trans;		//	移動量
-	D3DXVECTOR3			m_scale;		//	スケール量
+	void SetActive(bool isActive) { m_isActive = isActive; }
+	bool GetActive() { return m_isActive; }
 
-	LPDIRECT3DTEXTURE9* m_tex;			//	テクスチャ
-	bool				m_isActive;		//	
-
-public:
-	CSprite2D(){}						//	コンストラクタ
-	~CSprite2D(){}						//	デストラクタ
-
-	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale);
->>>>>>> dev
+	void InitAnimation(AnimationClip clip[], int actionNum);
+	void SetAnimationID(int id) { m_actionID = id; }
 
 	void Update(LPDIRECT3DDEVICE9 lpdev);
 
@@ -127,19 +104,35 @@ public:
 	
 	void Exit();
 
-	void Translation(D3DXVECTOR3& position) { m_position = position; }
-	void Rotate(D3DXVECTOR3& angle) { m_rotation = angle; }
-	void Scaling(D3DXVECTOR3& scale) { m_scale = scale; }
-
+	D3DXVECTOR3 GetLocation() { return m_location; }
+	void Translation(D3DXVECTOR3& position);
 	D3DXVECTOR3 GetPosition() { return m_position; }
-	D3DXVECTOR3 GetRotation() { return m_rotation; }
-	D3DXVECTOR3 GetScale() { return m_scale; }
+	void SetPosition(D3DXVECTOR3 pos) { m_position = pos; }
+
+	void Rotate(float angle) { m_angle = angle; }
+	float GetAngle() { return m_angle; }
+	// 回転値（ラジアン）
+	float GetRotation() { return  D3DX_PI*m_angle / 180.0f; }
+
+	void SetSize(int w, int h) { m_width = w; m_height = h; }
+	int GetWidth() { return m_width; }
+	int GetHeight() { return m_height; }
+	
+	void SetZBuffer(float z) { m_location.z = z; }
+	float GetZBuffer() { return m_location.z; }
+
+	void SetColor(D3DCOLOR c) { m_color = c; }
+	D3DCOLOR GetColor() { return m_color; }
+
+	void SetBoxPosition(D3DXVECTOR3 pos) { m_boxPosition = pos; }
+	D3DXVECTOR3 GetBoxPosition() { return m_boxPosition; }
+	void SetBoxCollision(int w, int h) { m_boxWidth = w; m_boxHeight = h; }
+	int GetBoxCollisionWidth() { return m_boxWidth; }
+	int GetBoxCollisionHeight() { return m_boxHeight; }
 };
 
-<<<<<<< HEAD
+bool CompSprite(CSprite2D a1, CSprite2D a2);
 
-=======
->>>>>>> dev
 //*****************************************************************************
 //	End of file.
 //*****************************************************************************
