@@ -16,27 +16,8 @@
 #include "input.h"
 #include "GameUtil.h"
 #include "CSprite2D.h"
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 #include "obb.h"
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 #include "SceneManager.h"
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> dev
-=======
-<<<<<<< HEAD
-#include "obb.h"
-=======
->>>>>>> dev
-=======
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> Stashed changes
-
->>>>>>> dev
 //-----------------------------------------------------------------------------
 //	プロトタイプ宣言
 //-----------------------------------------------------------------------------

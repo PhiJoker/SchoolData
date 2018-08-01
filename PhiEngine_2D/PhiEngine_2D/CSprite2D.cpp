@@ -10,40 +10,15 @@
 //-----------------------------------------------------------------------------
 #include "CSprite2D.h"
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 void CSprite2D::Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3 position, int width, int height, bool isTurn)
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-void CSprite2D::Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale, bool isTurn)
->>>>>>> dev
 {
-	m_tex = (LPDIRECT3DTEXTURE9*)malloc(sizeof(LPDIRECT3DTEXTURE9));
+	m_pTex = (LPDIRECT3DTEXTURE9*)malloc(sizeof(LPDIRECT3DTEXTURE9));
 	HRESULT hr;
-<<<<<<< HEAD
 	hr = D3DXCreateTextureFromFile(lpdev, filename, m_pTex);
-=======
-void CSprite2D::Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale)
-{
-	m_tex = (LPDIRECT3DTEXTURE9*)malloc(sizeof(LPDIRECT3DTEXTURE9));
-	HRESULT hr;
-	hr = D3DXCreateTextureFromFile(lpdev, filename, m_tex);
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
-=======
-	hr = D3DXCreateTextureFromFile(lpdev, filename, m_tex);
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> Stashed changes
 	if (FAILED(hr))
 	{
 		MessageBox(NULL, L"Err", L"Texture erro", MB_OK);
 	}
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 
 	m_position = position;
 	m_location = position;
@@ -54,29 +29,6 @@ void CSprite2D::Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& pos
 	m_boxWidth = width;
 	m_boxHeight = height;
 	m_color = D3DCOLOR_ARGB(255, 255, 255, 255);
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-	m_v[0] = { 0.0f,0.0f,0.0f,1,0,0 };
-	m_v[1] = { 100.0f,0.0f,0.0f,1,1,0 };
-	m_v[2] = { 0.0f,100.0f,0.0f,1,0,1 };
-	m_v[3] = { 100.0f,100.0f,0.0f,1,1,1 };
-=======
-	m_v[0] = { -1.0f,1.0f,0.0f,0,0 };
-	m_v[1] = { 1.0f,1.0f,0.0f,1,0 };
-	m_v[2] = { -1.0f,-1.0f,0.0f,0,1 };
-	m_v[3] = { 1.0f,-1.0f,0.0f,1,1 };
->>>>>>> parent of a2402fe... PhiEngine
-
-	m_position = { 0.0f, 0.0f, 0.0f };
-	m_rotation = { 0.0f, 0.0f, 0.0f };
-	m_scale = { 1.0f, 1.0f, 1.0f };
-
->>>>>>> dev
 	m_isAnimation = false;
 	m_isTurn = isTurn;
 
@@ -95,9 +47,6 @@ void CSprite2D::InitAnimation(AnimationClip clip[], int actionNum)
 
 void CSprite2D::Update(LPDIRECT3DDEVICE9 lpdev)
 {
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 	m_v[0] = { (float)-m_width / 2,(float)-m_height / 2,0,1,m_color,0,0 };
 	m_v[1] = { (float)m_width / 2,(float)-m_height / 2,0,1,m_color,1,0 };
 	m_v[2] = { (float)-m_width / 2,(float)m_height / 2,0,1,m_color,0,1 };
@@ -113,65 +62,6 @@ void CSprite2D::Update(LPDIRECT3DDEVICE9 lpdev)
 		m_v[i].y = y + m_position.y;
 	}
 
-=======
->>>>>>> Stashed changes
-	if (GetKeyboardPress(DIK_LEFT)) {
-		m_position.x -= 0.1f;
-		m_direction = (m_isTurn ? 1 : 0);
-	}
-	if (GetKeyboardPress(DIK_RIGHT)) {
-		m_position.x += 0.1f;
-		m_direction = (m_isTurn ? 0 : 0);
-	}
-
-<<<<<<< HEAD
-	//MakeWorldMatrix(m_Mat, m_MatTotal, trans, angles, scales);
-	MakeWorldMatrix(m_MatTotal, m_position, m_rotation, m_scale);
-=======
-	m_v[0] = { -1.0f,1.0f,0.0f,0,0 };
-	m_v[1] = { 1.0f,1.0f,0.0f,1,0 };
-	m_v[2] = { -1.0f,-1.0f,0.0f,0,1 };
-	m_v[3] = { 1.0f,-1.0f,0.0f,1,1 };
-
-	MakeWorldMatrix(m_MatTotal, position, rotation, scale);
-}
-
-void CSprite2D::Update(LPDIRECT3DDEVICE9 lpdev)
-{
-	static D3DXVECTOR3 tmpPos = { 0.0f, 0.0f, 0.0f };
-	static D3DXVECTOR3 tmpRotate = { 0.0f, 0.0f, 0.0f };
-	static D3DXVECTOR3 tmpScale = { 1.0f, 1.0f, 1.0f };
-
-	if (GetKeyboardPress(DIK_LEFT)) {
-		tmpPos.x -= 0.1f;
-	}
-	MakeWorldMatrix(m_Mat,m_MatTotal, tmpPos,tmpRotate,tmpScale);
-
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
-=======
-	MakeWorldMatrix(m_Mat, m_MatTotal, m_position, m_rotation, m_scale);
-
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> Stashed changes
-}
-
-void CSprite2D::Draw(LPDIRECT3DDEVICE9 lpdev)
-{
-<<<<<<< HEAD
-	lpdev->SetTransform(D3DTS_WORLD, &m_MatTotal);
-<<<<<<< HEAD
-	lpdev->SetFVF(D3DFVF_XYZRHW | D3DFVF_TEX1);
-	lpdev->SetTexture(0, *m_pTex);
-	
-=======
-	lpdev->SetTransform(D3DTS_WORLD, &m_Mat);
-	lpdev->SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
-	lpdev->SetTexture(0, *m_tex);
->>>>>>> parent of a2402fe... PhiEngine
-	
->>>>>>> dev
 	if (m_isAnimation)
 	{
 		if (m_frameCnt >= m_frameList[m_actionID].frameNum*m_frameList[m_actionID].frameTime)
@@ -208,58 +98,23 @@ void CSprite2D::Draw(LPDIRECT3DDEVICE9 lpdev)
 		m_v[1].u = (m_direction ? 0.0f : 1.0f);
 		m_v[3].u = (m_direction ? 0.0f : 1.0f);
 	}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 }
 
 void CSprite2D::Draw(LPDIRECT3DDEVICE9 lpdev)
 {
 	lpdev->SetFVF(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1);
 	lpdev->SetTexture(0, *m_pTex);
-=======
->>>>>>> Stashed changes
-=======
-	lpdev->SetFVF(D3DFVF_XYZ | D3DFVF_TEX1);
-	lpdev->SetTexture(0, *m_tex);
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 	lpdev->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, m_v, sizeof(VERTEX2D));
 }
 
 void CSprite2D::Exit()
 {
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
 	if (m_pTex != NULL)
 	{
 		(*m_pTex)->Release();
 		free(m_pTex);
 		m_pTex = NULL;
-=======
-	if (m_tex != NULL)
-	{
-		(*m_tex)->Release();
-		free(m_tex);
-		m_tex = NULL;
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
-=======
-	if (m_tex != NULL)
-	{
-		(*m_tex)->Release();
-		free(m_tex);
-		m_tex = NULL;
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> Stashed changes
 	}
 	if (m_isAnimation)
 	{

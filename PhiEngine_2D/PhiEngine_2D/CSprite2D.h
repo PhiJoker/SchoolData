@@ -14,11 +14,8 @@
 #include	"GameUtil.h"
 //#include	"MathUtil.h"
 
-<<<<<<< HEAD
 #define		RIGHT		0;
 #define		LEFT		1;
-=======
->>>>>>> dev
 //-----------------------------------------------------------------------------
 //	構造体定義
 //-----------------------------------------------------------------------------
@@ -27,23 +24,8 @@
 typedef struct tagVERTEX2D
 {
 	float x, y, z;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
 	float rhw;
-<<<<<<< Updated upstream
-=======
->>>>>>> parent of a2402fe... PhiEngine
-=======
-<<<<<<< HEAD
 	D3DCOLOR c;
-=======
-=======
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> dev
->>>>>>> Stashed changes
 	float u, v;
 }VERTEX2D;
 
@@ -63,10 +45,6 @@ typedef struct tagAnimationClip
 	//	時間(フレーム)
 	unsigned int frameTime;
 }AnimationClip;
-=======
-	float u, v;
-}VERTEX2D;
->>>>>>> dev
 
 //=============================================================================
 //!	@class	CSprite2D
@@ -89,21 +67,11 @@ private:
 	D3DXVECTOR3			m_position;		//	中心座標(画面上)
 	D3DXVECTOR3			m_location;		//	中心座標(フィールド)
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 	int					m_boxWidth;		//	当たり判定の幅
 	int					m_boxHeight;	//	当たり判定の高さ
 	D3DXVECTOR3			m_boxPosition;	//	当たり判定の中心座標
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-	D3DXVECTOR3			m_rotation;		//	回転角度
-	D3DXVECTOR3			m_position;		//	中心座標
-	D3DXVECTOR3			m_scale;		//	スケール量
->>>>>>> dev
 
-	LPDIRECT3DTEXTURE9*	m_tex;			//	テクスチャ
+	LPDIRECT3DTEXTURE9*	m_pTex;			//	テクスチャ
 	
 	//	フレームアニメーション
 	AnimationClip*		m_frameList;
@@ -124,32 +92,11 @@ public:
 
 	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3 position, int width, int height, bool isTurn);
 
-<<<<<<< HEAD
 	void SetActive(bool isActive) { m_isActive = isActive; }
 	bool GetActive() { return m_isActive; }
 
 	void InitAnimation(AnimationClip clip[], int actionNum);
 	void SetAnimationID(int id) { m_actionID = id; }
-=======
-	void SetAnimation(AnimationClip clip[], int actionNum);
-=======
-	D3DXVECTOR3			m_angle;		//	回転角度
-	D3DXVECTOR3			m_trans;		//	移動量
-	D3DXVECTOR3			m_scale;		//	スケール量
-
-	LPDIRECT3DTEXTURE9* m_tex;			//	テクスチャ
-	bool				m_isActive;		//	
-
-public:
-	CSprite2D(){}						//	コンストラクタ
-	~CSprite2D(){}						//	デストラクタ
-
-	void Init(LPDIRECT3DDEVICE9 lpdev, LPCWSTR filename, D3DXVECTOR3& position, D3DXVECTOR3& rotation, D3DXVECTOR3& scale);
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 
 	void Update(LPDIRECT3DDEVICE9 lpdev);
 
@@ -184,17 +131,8 @@ public:
 	int GetBoxCollisionHeight() { return m_boxHeight; }
 };
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 bool CompSprite(CSprite2D a1, CSprite2D a2);
-=======
-<<<<<<< HEAD
->>>>>>> dev
->>>>>>> Stashed changes
 
-=======
->>>>>>> dev
 //*****************************************************************************
 //	End of file.
 //*****************************************************************************

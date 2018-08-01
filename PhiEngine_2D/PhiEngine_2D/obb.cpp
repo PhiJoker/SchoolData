@@ -13,10 +13,6 @@
 
 //*****************************************************************************
 //	End of file.
-<<<<<<< Updated upstream
-//*****************************************************************************
-=======
-<<<<<<< HEAD
 //*****************************************************************************
 
 void CreateOBB(OBB* pOutObb, const D3DXVECTOR2 &pos, const D3DXMATRIX &rotateMtx, const D3DXVECTOR2 &len)
@@ -95,7 +91,3 @@ bool Collision2D( CSprite2D& obj1,  CSprite2D& obj2)
 	CreateOBB(&obb2, D3DXVECTOR2(obj2.GetBoxPosition().x, obj2.GetBoxPosition().y), rotMtx2, D3DXVECTOR2(obj2.GetBoxCollisionWidth() / 2.0f, obj2.GetBoxCollisionHeight() / 2.0f));
 	return ObbVSObb2D(obb1, obb2);
 }
-=======
-//*****************************************************************************
->>>>>>> dev
->>>>>>> Stashed changes

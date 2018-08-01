@@ -29,10 +29,7 @@ SceneType			g_SceneStage;
 
 std::list<CSprite2D>		g_renderList;
 CSprite2D			g_player;
-<<<<<<< HEAD
 CSprite2D			g_player2;
-=======
->>>>>>> dev
 
 //=============================================================================
 //!	@fn		GameInit
@@ -56,9 +53,6 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 	}
 
 	// カメラ変換行列作成
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 	//D3DXMatrixLookAtLH(&g_MatView,
 	//	&D3DXVECTOR3(0.0f, 0.0f, -10.0f),		// 視点
 	//	&D3DXVECTOR3(0.0f, 0.0f, 0.0f),			// 注視点
@@ -66,26 +60,14 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 
 	//// カメラ行列を固定パイプラインへセット
 	//g_DXGrobj->GetDXDevice()->SetTransform(D3DTS_VIEW, &g_MatView);
-=======
->>>>>>> Stashed changes
-	D3DXMatrixLookAtLH(&g_MatView,
-		&D3DXVECTOR3(0.0f, 0.0f, -10.0f),		// 視点
-		&D3DXVECTOR3(0.0f, 0.0f, 0.0f),		// 注視点
-		&D3DXVECTOR3(0.0f, 1.0f, 0.0f));		// 上向き
-
-												// カメラ行列を固定パイプラインへセット
-	g_DXGrobj->GetDXDevice()->SetTransform(D3DTS_VIEW, &g_MatView);
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 
 	// プロジェクション変換行列作成
-	D3DXMatrixPerspectiveFovLH(&g_MatProjection,
-		D3DX_PI / 2,					// 視野角
-		(float)width / (float)height,	// アスペクト比
-		1.0f,						// ニアプレーン
-		1000.0f);					// ファープレーン
+	//D3DXMatrixPerspectiveFovLH(&g_MatProjection,
+	//	D3DX_PI / 2,					// 視野角
+	//	(float)width / (float)height,	// アスペクト比
+	//	1.0f,						// ニアプレーン
+	//	1000.0f);					// ファープレーン
+	D3DXMatrixOrthoLH(&g_MatProjection, width, height, 0.1f, 1000.0f);
 
 	// 射影変換行列を固定パイプラインへセット
 	g_DXGrobj->GetDXDevice()->SetTransform(D3DTS_PROJECTION, &g_MatProjection);
@@ -124,32 +106,6 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 
 	g_SceneMgr.Initialize(g_DXGrobj->GetDXDevice());
 
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1), true);
-=======
-	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 3, 1), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(2, 2, 2), true);
->>>>>>> parent of a2402fe... PhiEngine
-
-	g_player2.Init(g_DXGrobj->GetDXDevice(), L"DX.png", D3DXVECTOR3(0, 3, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(3, 3, 3), false);
-	AnimationClip tmpc[2] = {
-		{0,0,0.2f,0.5f,4,50},
-		{ 0,0.5f,0.2f,0.5f,5 ,10}
-	};
-	g_player2.SetAnimation(tmpc, 2);
-=======
-	g_player.Init(g_DXGrobj->GetDXDevice(), L"heromagic.bmp", D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(0, 0, 0), D3DXVECTOR3(1, 1, 1));
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 	return	true;
 }
 
@@ -161,21 +117,7 @@ bool GameInit(HINSTANCE hinst, HWND hwnd, int width, int height, bool fullscreen
 //=============================================================================
 void GameInput() {
 	UpdateInput();				// 入力を検知する
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
 	
-=======
-
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
-=======
-
->>>>>>> parent of a2402fe... PhiEngine
->>>>>>> Stashed changes
 }
 
 //=============================================================================
@@ -185,36 +127,7 @@ void GameInput() {
 //!	@retval	なし
 //=============================================================================
 void GameUpdate() {
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 	g_SceneMgr.Update(g_DXGrobj->GetDXDevice());
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-	if (Collision2D(g_player, g_player2))
-	{
-		g_player2.m_actionID = 1;
-	}
-	else
-	{
-		g_player2.m_actionID = 0;
-	}
-=======
->>>>>>> parent of a2402fe... PhiEngine
-	g_player.Update(g_DXGrobj->GetDXDevice());
-	g_player2.Update(g_DXGrobj->GetDXDevice());
-=======
-	g_player.Update(g_DXGrobj->GetDXDevice());
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 }
 
 //=============================================================================
@@ -234,37 +147,8 @@ void GameRender() {
 	// 描画の開始をＤＩＲＥＣＴＸに通知
 	g_DXGrobj->GetDXDevice()->BeginScene();
 
-<<<<<<< HEAD
 	g_SceneMgr.Draw(g_DXGrobj->GetDXDevice());
 	//g_player2.Draw(g_DXGrobj->GetDXDevice());
-=======
-	switch (g_SceneStage)
-	{
-	case SceneTitle:
-	{
-
-		break;
-	}
-	case SceneRun:
-	{
-		break;
-	}
-	case SceneEnd:
-	{
-		break;
-	}
-	default:
-		break;
-	}
-	g_player.Draw(g_DXGrobj->GetDXDevice());
-<<<<<<< HEAD
-	g_player2.Draw(g_DXGrobj->GetDXDevice());
-=======
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 	//DrawTriangle(g_DXGrobj->GetDXDevice(), g_pTex1);
 	g_DXGrobj->GetDXDevice()->EndScene();	// 描画の終了を待つ
 
@@ -309,19 +193,8 @@ void GameMain()
 //=============================================================================
 void GameExit()
 {
-<<<<<<< HEAD
 	g_SceneMgr.Finalize();
 
-=======
-	g_player.Exit();
-<<<<<<< HEAD
-	g_player2.Exit();
-=======
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
 	g_gamemainthread.join();					// ゲームメインスレッドの終了を待つ
 
 	CloseHandle(g_hEventHandle);				// イベントハンドルクローズ

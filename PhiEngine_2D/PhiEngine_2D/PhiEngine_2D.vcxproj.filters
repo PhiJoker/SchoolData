@@ -30,7 +30,6 @@
     <ClCompile Include="CSprite2D.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="obb.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -47,18 +46,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ActionPlayer.cpp">
-=======
-    <ClCompile Include="MathUtil.cpp">
-<<<<<<< HEAD
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="obb.cpp">
-=======
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,7 +68,6 @@
     <ClInclude Include="obb.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="SceneBase.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -103,17 +89,8 @@
     <ClInclude Include="FloorSprite.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-<<<<<<< Updated upstream
-=======
     <ClInclude Include="ActionPlayer.h">
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-    <ClInclude Include="obb.h">
->>>>>>> dev
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-=======
->>>>>>> dev
   </ItemGroup>
 </Project>

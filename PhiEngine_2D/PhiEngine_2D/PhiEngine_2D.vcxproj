@@ -156,20 +156,9 @@
     <ClCompile Include="Stage0Scene.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
-<<<<<<< HEAD
     <ClCompile Include="obb.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
-=======
-    <ClCompile Include="MathUtil.cpp" />
-<<<<<<< HEAD
-    <ClCompile Include="obb.cpp" />
-=======
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ActionPlayer.h" />
@@ -183,20 +172,9 @@
     <ClInclude Include="Task.h" />
     <ClInclude Include="ISceneChanger.h" />
     <ClInclude Include="input.h" />
-<<<<<<< HEAD
     <ClInclude Include="obb.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="TitleScene.h" />
-=======
-    <ClInclude Include="MathUtil.h" />
-<<<<<<< HEAD
-    <ClInclude Include="obb.h" />
-=======
->>>>>>> dev
-<<<<<<< Updated upstream
-=======
->>>>>>> dev
->>>>>>> Stashed changes
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
